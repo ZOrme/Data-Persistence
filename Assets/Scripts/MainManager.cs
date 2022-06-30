@@ -11,6 +11,8 @@ public class MainManager : MonoBehaviour
     public Rigidbody Ball;
 
     public Text ScoreText;
+    public Text CurrentPlayerName;
+
     public GameObject GameOverText;
     
     private bool m_Started = false;
@@ -36,6 +38,10 @@ public class MainManager : MonoBehaviour
                 brick.onDestroyed.AddListener(AddPoint);
             }
         }
+
+        CurrentPlayerName.text = PlayerData.Instance.userName;
+        //CurrentPlayerName.text = "Derek";
+
     }
 
     private void Update()
